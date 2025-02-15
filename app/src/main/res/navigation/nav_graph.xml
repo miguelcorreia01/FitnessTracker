@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/exerciseFragment">
+
+    <!-- Exercise Fragment -->
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.example.fitnesstracker.ui.exercise.ExerciseFragment"
+        android:label="Exercise"
+        tools:layout="@layout/fragment_exercise" />
+
+    <!-- Workout Fragment -->
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="com.example.fitnesstracker.ui.workout.WorkoutFragment"
+        android:label="Workout"
+        tools:layout="@layout/fragment_workout" />
+</navigation>

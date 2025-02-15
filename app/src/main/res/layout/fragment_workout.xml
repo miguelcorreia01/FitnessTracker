@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Date Input -->
+    <EditText
+        android:id="@+id/et_workout_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/workout_date"
+        android:inputType="date"
+        android:minHeight="48dp" />
+
+    <!-- Exercise Selection -->
+    <Spinner
+        android:id="@+id/spinner_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"/>
+
+
+    <!-- Weight Input -->
+    <EditText
+        android:id="@+id/et_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Weight:"
+        android:hint="@string/weight"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <!-- Reps Input -->
+    <EditText
+        android:id="@+id/et_reps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Reps: "
+        android:hint="@string/reps"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <!-- Button to Add Set -->
+    <Button
+        android:id="@+id/btn_add_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_add_set" />
+
+    <!-- RecyclerView for Sets -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_sets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Button to Save Workout -->
+    <Button
+        android:id="@+id/btn_save_workout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_save_workout" />
+
+</LinearLayout>

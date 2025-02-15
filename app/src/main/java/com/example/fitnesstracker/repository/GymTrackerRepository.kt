@@ -3,7 +3,7 @@ package com.example.fitnesstracker.repository
 import androidx.lifecycle.LiveData
 import com.example.fitnesstracker.model.*
 
-class GymTrackerRepositoryRepository(private val dao: FitnessTrackerDao) {
+class GymTrackerRepository(private val dao: FitnessTrackerDao) {
 
     // Exercise operations
     val allExercises: LiveData<List<Exercise>> = dao.getAllExercises()
@@ -14,7 +14,10 @@ class GymTrackerRepositoryRepository(private val dao: FitnessTrackerDao) {
     // Workout Entry operations
     val allWorkoutEntries: LiveData<List<WorkoutEntry>> = dao.getAllWorkoutEntries()
 
-    suspend fun insertWorkoutEntry(workoutEntry: WorkoutEntry) = dao.insertWorkoutEntry(workoutEntry)
+    suspend fun insertWorkoutEntry(workoutEntry: WorkoutEntry): Long {
+        return dao.insertWorkoutEntry(workoutEntry)
+    }
+    suspend fun deleteWorkoutEntry(workoutEntry: WorkoutEntry) = dao.deleteWorkoutEntry(workoutEntry)
 
     // Workout Set operations
     suspend fun insertWorkoutSet(workoutSet: WorkoutSet) = dao.insertWorkoutSet(workoutSet)

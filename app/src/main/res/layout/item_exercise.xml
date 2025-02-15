@@ -23,6 +23,7 @@
         android:textSize="14sp"
         android:layout_marginEnd="8dp" />
 
+
     <!-- Delete Button -->
     <ImageButton
         android:id="@+id/deleteButton"
@@ -31,4 +32,5 @@
         android:src="@drawable/ic_delete"
         android:contentDescription="Delete Exercise"
         android:background="?android:attr/selectableItemBackground" />
+
 </LinearLayout>

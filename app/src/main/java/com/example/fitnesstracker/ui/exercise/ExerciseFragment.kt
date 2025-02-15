@@ -26,7 +26,7 @@ class ExerciseFragment : Fragment() {
         // Find the views using their IDs
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         val btnAdd: Button = view.findViewById(R.id.btn_add_exercise)
-        val etExerciseName: EditText = view.findViewById(R.id.et_exercise_name)  // Make sure this matches the ID in the layout
+        val etExerciseName: EditText = view.findViewById(R.id.et_exercise_name)
         val etMuscleGroup: EditText = view.findViewById(R.id.et_muscle_group)
 
         exerciseViewModel = ViewModelProvider(this).get(ExerciseViewModel::class.java)

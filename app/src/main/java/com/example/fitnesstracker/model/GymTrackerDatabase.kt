@@ -15,15 +15,14 @@ abstract class GymTrackerDatabase : RoomDatabase() {
 
         fun getDatabase(context: Context): GymTrackerDatabase {
             return INSTANCE ?: synchronized(this) {
-                val instance = Room.databaseBuilder(
+                Room.databaseBuilder(
                     context.applicationContext,
                     GymTrackerDatabase::class.java,
                     "gym_database"
-                ).build()
-                INSTANCE = instance
-                instance
+                ).build().also { INSTANCE = it }
             }
         }
+
     }
 }
 
@@ -43,7 +42,11 @@ interface FitnessTrackerDao {
 
     // Workout Entry Queries
     @Insert
-    suspend fun insertWorkoutEntry(workoutEntry: WorkoutEntry)
+    suspend fun insertWorkoutEntry(workoutEntry: WorkoutEntry): Long
+
+
+    @Delete
+    suspend fun deleteWorkoutEntry(workoutEntry: WorkoutEntry)
 
     @Query("SELECT * FROM workout_entry_table ORDER BY date DESC")
     fun getAllWorkoutEntries(): LiveData<List<WorkoutEntry>>
@@ -54,4 +57,6 @@ interface FitnessTrackerDao {
 
     @Query("SELECT * FROM workout_set_table WHERE workout_entry_id = :entryId")
     fun getSetsForWorkout(entryId: Int): LiveData<List<WorkoutSet>>
+
+
 }

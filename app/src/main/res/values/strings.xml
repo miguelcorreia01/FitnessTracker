@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">FitnessTracker</string>
+    <string name="hint_exercise_name">Exercise Name</string>
+    <string name="hint_muscle_group">Muscle Group</string>
+    <string name="btn_add_exercise">Add Exercise</string>
+    <string name="workout_date">Workout Date</string>
+    <string name="btn_add_set">Add Set</string>
+    <string name="btn_add_workout">Add Workout</string>
+    <string name="weight">Weight: 0 kg</string>
+    <string name="reps">Reps: 0</string>
+    <string name="btn_delete_set">Delete Set</string>
+    <string name="btn_save_workout">Save Workout</string>
+    <string name="set_number">Set Number: </string>
 </resources>
